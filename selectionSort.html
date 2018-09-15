@@ -1,0 +1,34 @@
+<script type="text/javascript">
+	
+	function selectionSort(itemArray){
+
+		var itemArrayLength = itemArray.length;
+
+		for(var i=0; i<itemArrayLength-1; i++){
+
+			var iMin = i; //min holds the current minimum number position for each pass; i holds the Initial min number
+			for(var j = i+1; j<itemArrayLength ;j++){ //Note that j = i + 1 as we only need to go through unsorted array
+				if(itemArray[j] < itemArray[iMin]) //Compare the numbers
+					iMin = j; //Change the current min number position if a smaller num is found
+			}
+
+			if (iMin != i) {
+				//After each pass, if the current min num != initial min num, exchange the position.
+				//Swap the numbers 
+				var temp = itemArray[i];
+				itemArray[i] = itemArray[iMin];
+				itemArray[iMin] = temp; 
+			}
+
+		}
+
+		return itemArray;
+	}
+
+	console.log(selectionSort([3,4,7,9,2]));
+
+
+
+
+
+</script>
