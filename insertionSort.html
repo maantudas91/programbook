@@ -1,0 +1,23 @@
+<script type="text/javascript">
+	
+	function insertionSort(itemArray){
+		var itemArrayLength = itemArray.length;
+
+		for( var i=1; i<itemArrayLength; i++){
+			var value = itemArray[i];
+			var hole = i;
+
+			while(hole >0 && itemArray[hole-1] > value){
+				itemArray[hole] = itemArray[hole-1];
+				hole = hole-1;
+			}
+
+			itemArray[hole] = value;
+		}
+		return itemArray;
+	}
+
+	console.log(insertionSort([3,4,7,9,2,5]));
+
+	//http://codingmiles.com/sorting-algorithms-insertion-sort-using-javascript/
+</script>
