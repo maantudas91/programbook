@@ -1,0 +1,68 @@
+<script type="text/javascript">
+	//http://codingmiles.com/sorting-algorithms-bubble-sort-using-javascript/
+
+
+	function bubbleSort(items){
+		var itemsLength = items.length;
+
+		for(var i=0; i<itemsLength; i++){  //Number of passes
+
+			for( var j=0; j<itemsLength-1; j++){
+				//Compare the adjacent positions
+				if(items[j] > items[j+1]){ 
+					var temp = items[j];
+					items[j] = items[j+1];
+					items[j+1] = temp;
+				}
+			}
+		}
+		return items;
+	}
+
+	console.log(bubbleSort([5,3,8,9,1,4]));
+
+
+	function bubbleSort2(items){
+		var itemsLength = items.length;
+
+		for(var i=0; i<itemsLength-1; i++){
+
+			for( var j=0; j<(itemsLength-i-1); j++){  // after every pass, last part is is already sorted
+				if(items[j] > items[j+1]){
+					var temp = items[j];
+					items[j] = items[j+1];
+					items[j+1] = temp;
+				}
+			}
+		}
+		return items;
+	}
+
+	console.log(bubbleSort2([5,3,8,9,1,4]));
+
+
+	function bubbleSort3(items){
+		var itemsLength = items.length;
+
+		for(var i=0; i<itemsLength-1; i++){
+
+			var flag = 0;  // to reduce redundant call
+			
+			for( var j=0; j<(itemsLength-i-1); j++){
+				if(items[j] > items[j+1]){
+					var temp = items[j];
+					items[j] = items[j+1];
+					items[j+1] = temp;
+					flag = 1;
+				}
+			}
+			if(flag == 0) break;
+		}
+		return items;
+	}
+
+	console.log(bubbleSort3([5,3,8,9,1,4]));
+
+
+	// Complexity = O(n^2)
+</script>
