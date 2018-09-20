@@ -30,6 +30,28 @@
 
 
     console.log(result);
+        
+        
+        
+    //Using Reduce
+     var objArr = [
+           {key:"Mon Sep 23 2013 00:00:00 GMT-0400", val:42},
+           {key:"Mon Sep 24 2013 00:00:00 GMT-0400", val:78},
+           {key:"Mon Sep 25 2013 00:00:00 GMT-0400", val:23},
+           {key:"Mon Sep 23 2013 00:00:00 GMT-0400", val:54}
+      ]
+
+     var result = Object.values(objArr.reduce(function(accumalator, currentValue){
+            var key = currentValue.key;
+            if (!accumalator[key]) accumalator[key] = currentValue;
+
+            else {
+                accumalator[key].val += currentValue.val;
+            }
+            return accumalator;
+    },{}));
+
+    console.log(result);
 
     </script>
 </body>
