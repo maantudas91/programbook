@@ -1,0 +1,36 @@
+<html>
+<head></head>
+<body>
+    <script type="application/javascript">
+    
+    var my_objArr = [
+        {key:'dell', val:42},
+        {key:'HP', val:78},
+        {key:'dell', val:23},
+        {key:'HCL', val:54}
+    ]
+
+
+    var temp = {};
+    var obj = null;
+    for(var i=0; i < my_objArr.length; i++) {
+    obj=my_objArr[i];
+
+    if(!temp[obj.key]) {
+        temp[obj.key] = obj;
+    } else {
+        temp[obj.key].val += obj.val;
+    }
+    
+    }
+
+    var result = [];
+    for (var prop in temp)
+        result.push(temp[prop]);
+
+
+    console.log(result);
+
+    </script>
+</body>
+</html>
